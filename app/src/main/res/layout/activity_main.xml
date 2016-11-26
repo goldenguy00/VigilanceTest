@@ -10,17 +10,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.wilsongolden.vigilancetest.MainActivity">
 
-    <TextView
-        android:text="@string/hit"
-        android:textSize="30dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="59dp"
-        android:id="@+id/hits" />
-
     <Button
         android:text="Press Me"
         android:layout_width="wrap_content"
@@ -35,6 +24,7 @@
         android:layout_alignParentTop="true"
         android:height="300dp" />
 
+
     <TextView
         android:text="@string/miss"
         android:textSize="30dp"
@@ -44,6 +34,17 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:id="@+id/misses" />
+
+    <TextView
+        android:text="@string/hit"
+        android:textSize="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="59dp"
+        android:id="@+id/hits" />
 
     <TextView
         android:text="@string/falseStart"
