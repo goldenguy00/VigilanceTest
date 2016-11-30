@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private boolean running, missState;
     private long reactionTime;
     private int hitNum, missNum, fsNum;
-    private ArrayList reactionTimes;
+    private ArrayList reactionTimeList;
     private ReactionTest react;
 
     @Override
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         missNum = 0;
         fsNum = 0;
         reactionTime = 0;
-        reactionTimes = new ArrayList(1);
+        reactionTimeList = new ArrayList(1);
         running = false;
         missState = false;
         react = new ReactionTest();
@@ -59,8 +59,8 @@ public class MainActivity extends AppCompatActivity {
                 System.out.println("Black");
 
                 reactionTime = System.currentTimeMillis() - reactionTime;
-                reactionTimes.add((double)reactionTime / 1000);
-                System.out.println(reactionTimes.get(reactionTimes.size() - 1));
+                reactionTimeList.add((double)reactionTime / 1000);
+                System.out.println(reactionTimeList.get(reactionTimeList.size() - 1));
                 if(!missState) {
                     hit.setText("Hits = " + hitNum++);
                 }
@@ -117,6 +117,7 @@ public class MainActivity extends AppCompatActivity {
         protected void onPreExecute() {
 
         }
+
         @Override
         protected Long doInBackground(Long... time) {
             missState = false;
