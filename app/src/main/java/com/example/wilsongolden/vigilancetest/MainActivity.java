@@ -4,10 +4,10 @@ import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private boolean running, missState;
     private long reactionTime;
     private int hitNum, missNum, fsNum;
+    private ArrayList reactionTimes;
     private ReactionTest react;
 
     @Override
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         missNum = 0;
         fsNum = 0;
         reactionTime = 0;
+        reactionTimes = new ArrayList(1);
         running = false;
         missState = false;
         react = new ReactionTest();
@@ -57,16 +59,21 @@ public class MainActivity extends AppCompatActivity {
                 System.out.println("Black");
 
                 reactionTime = System.currentTimeMillis() - reactionTime;
-                System.out.println((double)reactionTime / 1000);
+                reactionTimes.add((double)reactionTime / 1000);
+                System.out.println(reactionTimes.get(reactionTimes.size() - 1));
                 if(!missState) {
                     hit.setText("Hits = " + hitNum++);
                 }
-                missState = false;
                 new WaitTask().execute();
-            }else {
-
-                System.out.println("False Start");
-                falseStart.setText("False Starts = " + (++fsNum));
+            }else  {
+                if(System.currentTimeMillis() - reactionTime < 3000 && missState) {
+                    System.out.println("Busy");
+                    miss.setText("Misses = " + (--missNum));
+                    missState = false;
+                }else {
+                    System.out.println("False Start");
+                    falseStart.setText("False Starts = " + (++fsNum));
+                }
             }
         }
     }
@@ -112,6 +119,7 @@ public class MainActivity extends AppCompatActivity {
         }
         @Override
         protected Long doInBackground(Long... time) {
+            missState = false;
             try {
                 Thread.sleep(3000);
             }catch(InterruptedException e) {}
@@ -125,6 +133,7 @@ public class MainActivity extends AppCompatActivity {
             System.out.println("Stopped " + current);
             miss.setText("Misses = " + (++missNum));
             missState = true;
+            reactionTime = 0;
             myButton.performClick();
         }
     }
