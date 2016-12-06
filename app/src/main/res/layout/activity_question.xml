@@ -3,8 +3,98 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_question"
+    android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.example.wilsongolden.vigilancetest.QuestionActivity">
+    tools:context="com.example.wilsongolden.vigilancetest.QuestionActivity"
+    android:paddingTop="10dp">
+
+    <TextView
+        android:text="Test stuff"
+        android:textSize="24sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/question3"
+        android:textColor="@color/black"
+        android:paddingTop="10dp"
+        android:layout_marginTop="200dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="150dp"
+        android:inputType="number"
+        android:textColor="@color/black"
+        android:ems="10"
+        android:id="@+id/answerInput3"
+        tools:text="@string/toolTip"
+        tools:textColor="@android:color/darker_gray"
+        android:textSize="24sp"
+        android:layout_marginTop="200dp" />
+
+    <TextView
+        android:text="Test stuff"
+        android:textSize="24sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/question"
+        android:textColor="@color/black"
+        android:paddingTop="10dp"
+        android:textColorHint="@android:color/darker_gray" />
+
+    <TextView
+        android:text="Test stuff"
+        android:textSize="24sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/question2"
+        android:textColor="@color/black"
+        android:paddingTop="10dp"
+        android:layout_marginTop="100dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="150dp"
+        android:inputType="number"
+        android:textColor="@color/black"
+        android:ems="10"
+        android:id="@+id/answerInput"
+        tools:text="@string/toolTip"
+        tools:textColor="@android:color/darker_gray"
+        android:textSize="24sp"
+        tools:textColorHint="@android:color/darker_gray" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="150dp"
+        android:inputType="number"
+        android:textColor="@color/black"
+        android:ems="10"
+        android:id="@+id/answerInput2"
+        tools:text="@string/toolTip"
+        tools:textColor="@android:color/darker_gray"
+        android:textSize="24sp"
+        android:layout_marginTop="100dp" />
+
 </android.support.design.widget.CoordinatorLayout>

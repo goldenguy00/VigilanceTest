@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
@@ -18,9 +19,13 @@ public class MainActivity extends AppCompatActivity {
     private boolean running, missState;
     private long reactionTime;
     private int hitNum, missNum, fsNum;
-    private ArrayList reactionTimeList;
+    private ArrayList<Double> reactionTimeList;
     private ReactionTest react;
     public static String EXTRA_MESSAGE = "com.example.wilsongolden.MESSAGE";
+    public static String EXTRA_HITS = "com.example.wilsongolden.HITS";
+    public static String EXTRA_MISSES = "com.example.wilsongolden.MISSES";
+    public static String EXTRA_FALSE_STARTS = "com.example.wilsongolden.FALSE_STARTS";
+    public static String EXTRA_REACTION_ARRAY = "com.example.wilsongolden.REACTIONS";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         missNum = 0;
         fsNum = 0;
         reactionTime = 0;
-        reactionTimeList = new ArrayList(1);
+        reactionTimeList = new ArrayList<>(1);
         running = false;
         missState = false;
         react = new ReactionTest();
@@ -50,8 +55,21 @@ public class MainActivity extends AppCompatActivity {
 
     public void sendMessage(View view) {
         Intent intent = new Intent(this, QuestionActivity.class);
-        intent.putExtra(EXTRA_MESSAGE, ((Integer) missNum).toString()   );
+        intent.putExtra(EXTRA_HITS, hitNum);
+        intent.putExtra(EXTRA_MISSES, missNum);
+        intent.putExtra(EXTRA_FALSE_STARTS, fsNum);
+        intent.putExtra(EXTRA_REACTION_ARRAY, getList());
         startActivity(intent);
+    }
+
+    private double[] getList() {
+        double[] list = new double[reactionTimeList.size()];
+        Iterator<Double> iterator = reactionTimeList.iterator();
+        for (int i = 0; i < list.length; i++)
+        {
+            list[i] = iterator.next().doubleValue();
+        }
+        return list;
     }
 
     private class buttonListener implements View.OnClickListener {
