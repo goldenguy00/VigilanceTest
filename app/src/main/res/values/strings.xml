@@ -5,4 +5,11 @@
     <string name="falseStart">False Starts = 0</string>
     <string name="toolTip">Enter your answer</string>
     <string name="title_activity_question">QuestionActivity</string>
+    <string name="option_1">1 : No fatigue</string>
+    <string name="option_2">2</string>
+    <string name="option_3">3</string>
+    <string name="option_4">4</string>
+    <string name="option_5">5</string>
+    <string name="option_6">6</string>
+    <string name="option_7">7 : Unable to function   </string>
 </resources>

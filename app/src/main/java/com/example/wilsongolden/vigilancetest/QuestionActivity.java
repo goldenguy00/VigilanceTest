@@ -5,12 +5,15 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 public class QuestionActivity extends AppCompatActivity {
 
     private TextView question, question2, question3;
     private EditText getAnswer, getAnswer2, getAnswer3;
+    private RadioButton[] radioButtons;
     private int hits, misses, falseStarts;
     private double[] reactionTimeArray;
     private double avgReactionTime;
@@ -32,7 +35,5 @@ public class QuestionActivity extends AppCompatActivity {
         getAnswer = (EditText) findViewById(R.id.answerInput);
         getAnswer2 = (EditText) findViewById(R.id.answerInput2);
         getAnswer3 = (EditText) findViewById(R.id.answerInput3);
-
-        ViewGroup layout = (ViewGroup) findViewById(R.id.activity_question);
     }
 }

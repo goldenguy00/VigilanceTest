@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
     private int hitNum, missNum, fsNum;
     private ArrayList<Double> reactionTimeList;
     private ReactionTest react;
-    public static String EXTRA_MESSAGE = "com.example.wilsongolden.MESSAGE";
     public static String EXTRA_HITS = "com.example.wilsongolden.HITS";
     public static String EXTRA_MISSES = "com.example.wilsongolden.MISSES";
     public static String EXTRA_FALSE_STARTS = "com.example.wilsongolden.FALSE_STARTS";

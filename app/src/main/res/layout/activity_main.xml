@@ -70,4 +70,5 @@
         android:layout_marginBottom="15dp"
         android:onClick="sendMessage"
         android:id="@+id/test" />
+
 </RelativeLayout>
