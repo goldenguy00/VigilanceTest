@@ -1,5 +1,6 @@
 package com.example.wilsongolden.vigilancetest;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,13 +13,14 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button myButton;
+    private Button myButton, test;
     private TextView hit, miss, falseStart;
     private boolean running, missState;
     private long reactionTime;
     private int hitNum, missNum, fsNum;
     private ArrayList reactionTimeList;
     private ReactionTest react;
+    public static String EXTRA_MESSAGE = "com.example.wilsongolden.MESSAGE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         missState = false;
         react = new ReactionTest();
 
+        test = (Button) findViewById(R.id.test);
         myButton = (Button) findViewById(R.id.button);
         myButton.setText("Press to Start");
         myButton.setOnClickListener(new buttonListener());
@@ -43,6 +46,12 @@ public class MainActivity extends AppCompatActivity {
         miss.setText("Misses = " + missNum);
         falseStart = (TextView) findViewById(R.id.falseStarts);
         falseStart.setText("False Starts = " + fsNum);
+    }
+
+    public void sendMessage(View view) {
+        Intent intent = new Intent(this, QuestionActivity.class);
+        intent.putExtra(EXTRA_MESSAGE, ((Integer) missNum).toString()   );
+        startActivity(intent);
     }
 
     private class buttonListener implements View.OnClickListener {

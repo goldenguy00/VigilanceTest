@@ -59,4 +59,15 @@
         android:layout_marginBottom="22dp"
         android:id="@+id/falseStarts"
         android:textColor="@color/gray" />
+
+    <Button
+        android:text="Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/misses"
+        android:layout_alignRight="@+id/falseStarts"
+        android:layout_alignEnd="@+id/falseStarts"
+        android:layout_marginBottom="15dp"
+        android:onClick="sendMessage"
+        android:id="@+id/test" />
 </RelativeLayout>

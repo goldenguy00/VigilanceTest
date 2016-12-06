@@ -3,4 +3,5 @@
     <string name="hit">Hits = 0</string>
     <string name="miss">Misses = 0</string>
     <string name="falseStart">False Starts = 0</string>
+    <string name="title_activity_question">QuestionActivity</string>
 </resources>
